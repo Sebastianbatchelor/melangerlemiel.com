@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Merch — Mélanger Le Miel</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="/" class="nav-brand">Mélanger Le Miel</a>
+      <ul class="nav-links">
+        <li><a href="/shop.html" class="active">Merch</a></li>
+        <li><a href="/tickets.html">Tickets</a></li>
+        <li><a href="/melange.html">Mélange</a></li>
+        <li><a href="/music.html">Music</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page">
+    <h1 class="page-heading">Merch</h1>
+    <!-- Static placeholder boxes shown until main.js successfully loads
+         live rows from Supabase's products table. -->
+    <ul class="merch-grid" id="merch-grid">
+      <li><div class="merch-item-image"></div></li>
+      <li><div class="merch-item-image"></div></li>
+      <li><div class="merch-item-image"></div></li>
+    </ul>
+  </main>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

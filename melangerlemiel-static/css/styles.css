@@ -1,0 +1,335 @@
+/* Mélanger Le Miel — shared styles */
+
+:root {
+  --brick: #a62c1e;
+  --white: #ffffff;
+  --placeholder: #d9d9d9;
+  --font-sans: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+  --content-max: 1440px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--brick);
+  color: var(--white);
+  font-family: var(--font-sans);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 3px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ---------- Layout shell ---------- */
+
+.page {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 24px 96px;
+}
+
+@media (min-width: 768px) {
+  .page {
+    padding: 0 48px 96px;
+  }
+}
+
+/* ---------- Nav ---------- */
+
+.site-header {
+  padding: 32px 24px 24px;
+}
+
+@media (min-width: 768px) {
+  .site-header {
+    padding: 40px 48px 24px;
+  }
+}
+
+.nav {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+.nav-brand {
+  display: block;
+  max-width: 240px;
+  font-size: 24px;
+  line-height: 1.15;
+}
+
+@media (min-width: 768px) {
+  .nav-brand {
+    font-size: 30px;
+  }
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 40px;
+}
+
+@media (min-width: 768px) {
+  .nav-links {
+    gap: 12px 48px;
+  }
+}
+
+.nav-links a {
+  font-size: 24px;
+}
+
+@media (min-width: 768px) {
+  .nav-links a {
+    font-size: 30px;
+  }
+}
+
+.nav-links .active {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+/* ---------- Page heading ---------- */
+
+.page-heading {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0 0 64px;
+}
+
+@media (min-width: 768px) {
+  .page-heading {
+    font-size: 18px;
+  }
+}
+
+/* ---------- Home: bio ---------- */
+
+.bio-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  padding-top: 16px;
+}
+
+@media (min-width: 768px) {
+  .bio-layout {
+    grid-template-columns: 420px 1fr;
+    gap: 64px;
+  }
+}
+
+.bio-photo {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 3 / 4.4;
+  overflow: hidden;
+  background-color: var(--placeholder);
+}
+
+.bio-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bio-text {
+  max-width: 640px;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+@media (min-width: 768px) {
+  .bio-text {
+    font-size: 16px;
+  }
+}
+
+.bio-text h1,
+.bio-text h2 {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0 0 12px;
+}
+
+@media (min-width: 768px) {
+  .bio-text h1,
+  .bio-text h2 {
+    font-size: 18px;
+  }
+}
+
+.bio-text p {
+  margin: 0 0 8px;
+}
+
+.bio-section {
+  margin-bottom: 32px;
+}
+
+.bio-section:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Music / Tickets: stacked lists ---------- */
+
+.stacked-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+}
+
+@media (min-width: 768px) {
+  .stacked-list {
+    font-size: 30px;
+  }
+}
+
+.stacked-list.tickets li {
+  margin-bottom: 32px;
+}
+
+.stacked-list.music li {
+  margin-bottom: 2px;
+}
+
+.list-empty {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+@media (min-width: 768px) {
+  .list-empty {
+    font-size: 16px;
+  }
+}
+
+/* ---------- Merch: product grid ---------- */
+
+.merch-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+@media (min-width: 640px) {
+  .merch-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+  }
+}
+
+.merch-item-image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background-color: var(--placeholder);
+  overflow: hidden;
+}
+
+.merch-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.merch-item-info {
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  .merch-item-info {
+    font-size: 16px;
+  }
+}
+
+.merch-item-info p {
+  margin: 0;
+}
+
+.buy-button {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 14px;
+  border: 1px solid var(--white);
+  background: transparent;
+  color: var(--white);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.buy-button:hover {
+  background: var(--white);
+  color: var(--brick);
+  text-decoration: none;
+}
+
+.buy-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ---------- Mélange page ---------- */
+
+.melange-text {
+  max-width: 640px;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+@media (min-width: 768px) {
+  .melange-text {
+    font-size: 16px;
+  }
+}
+
+.melange-text p {
+  margin: 0 0 24px;
+}
+
+.melange-text a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
