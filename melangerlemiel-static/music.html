@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music — Mélanger Le Miel</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="/" class="nav-brand">Mélanger Le Miel</a>
+      <ul class="nav-links">
+        <li><a href="/shop.html">Merch</a></li>
+        <li><a href="/tickets.html">Tickets</a></li>
+        <li><a href="/melange.html">Mélange</a></li>
+        <li><a href="/music.html" class="active">Music</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page">
+    <h1 class="page-heading">Music</h1>
+    <div class="music-layout">
+      <ul class="stacked-list music">
+        <!-- TODO: swap "#" for the real profile URLs -->
+        <li><a href="#" target="_blank" rel="noreferrer">Soundcloud</a></li>
+        <li><a href="#" target="_blank" rel="noreferrer">Spotify</a></li>
+        <li><a href="#" target="_blank" rel="noreferrer">Bandcamp</a></li>
+        <li><a href="#" target="_blank" rel="noreferrer">Apple Music</a></li>
+        <li><a href="#" target="_blank" rel="noreferrer">Youtube</a></li>
+      </ul>
+      <!-- Small version of the homepage portrait + "Next Time" loop -->
+      <div class="photo-wrap photo-wrap--small">
+        <div class="bio-photo">
+          <img src="/assets/seb.jpg" alt="Sebastian Batchelor, Mélanger Le Miel. Photo courtesy of PDA Store" onerror="this.style.display='none'" />
+        </div>
+        <svg class="ring" viewBox="0 0 520 380" aria-hidden="true">
+          <defs>
+            <path id="ring-path" d="M 50 190 a 210 140 0 1 1 420 0 a 210 140 0 1 1 -420 0 a 210 140 0 1 1 420 0 a 210 140 0 1 1 -420 0" />
+          </defs>
+          <g transform="rotate(14 260 190)">
+            <text class="ring-text"><textPath href="#ring-path" startOffset="0">Next&#160;Time&#160;&#160;Next&#160;Time&#160;&#160;Next&#160;Time&#160;&#160;Next&#160;Time&#160;&#160;Next&#160;Time&#160;&#160;Next&#160;Time&#160;&#160;<animate attributeName="startOffset" from="0" to="1110.6" dur="40s" repeatCount="indefinite" /></textPath></text>
+          </g>
+          <text class="ring-name" x="140" y="210" transform="rotate(8 140 210)">Mélanger Le Miel</text>
+        </svg>
+      </div>
+    </div>
+    <img class="drawing drawing--page" src="/assets/drawings/profile-line.png" alt="" aria-hidden="true" />
+  </main>
+
+  <script src="/js/main.js" defer></script>
+  <script>
+    (function () {
+      var p = document.getElementById('ring-path'), t = document.querySelector('.ring-text'), a = document.querySelector('.ring-text animate');
+      if (!p || !t) return;
+      var lap = p.getTotalLength() / 2;
+      t.setAttribute('textLength', lap); t.setAttribute('lengthAdjust', 'spacing');
+      if (a) a.setAttribute('to', lap);
+    })();
+  </script>
+</body>
+</html>
